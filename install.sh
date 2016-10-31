@@ -36,15 +36,15 @@ PWD=$(pwd);
 # Load needed functions
 #---------------------------------------------------------------------
 
-DISTRO=centos7
-CFG_HOSTNAME_FQDN=$ISP_HOSTNAME
-CFG_MYSQL_ROOT_PWD=$MYSQL_ROOT_PASS
-CFG_WEBSERVER=apache
-SSL_COUNTRY=SK
-SSL_STATE=BB
-SSL_LOCALITY=BB
-SSL_ORGANIZATION=fascinatin
-SSL_ORGUNIT=IT
+export DISTRO=centos7
+export CFG_HOSTNAME_FQDN=$ISP_HOSTNAME
+export CFG_MYSQL_ROOT_PWD=$MYSQL_ROOT_PASS
+export CFG_WEBSERVER=apache
+export SSL_COUNTRY=SK
+export SSL_STATE=BB
+export SSL_LOCALITY=BB
+export SSL_ORGANIZATION=fascinatin
+export SSL_ORGUNIT=IT
 
 #---------------------------------------------------------------------
 # Load needed Modules
@@ -95,7 +95,7 @@ if [ -f /etc/centos-release ]; then
 	InstallFTP 
 	InstallISPConfig
 	echo -e "${green}Well done ISPConfig installed and configured correctly :D ${NC}"
-	echo "Now you can connect to your ISPConfig installation at https://$CFG_HOSTNAME_FQDN:8080 or https://IP_ADDRESS:8080"
+	echo "Now you can connect to your ISPConfig installation at https://$CFG_HOSTNAME_FQDN:8080 or https://$ETH0_IP:8080"
 	echo "You can visit my GitHub profile at https://github.com/servisys/ispconfig_setup/"
 	echo -e "${red}If you setup Roundcube webmail go to http://$CFG_HOSTNAME_FQDN/roundcubemail/installer and configure db connection${NC}"
 	echo -e "${red}After that disable access to installer in /etc/httpd/conf.d/roundcubemail.conf${NC}"

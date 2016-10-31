@@ -30,21 +30,21 @@ NC='\033[0m' # No Color
 
 
 #Saving current directory
-PWD=$(pwd);
+PWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #---------------------------------------------------------------------
 # Load needed functions
 #---------------------------------------------------------------------
 
-export DISTRO=centos7
-export CFG_HOSTNAME_FQDN=$ISP_HOSTNAME
-export CFG_MYSQL_ROOT_PWD=$MYSQL_ROOT_PASS
-export CFG_WEBSERVER=apache
-export SSL_COUNTRY=SK
-export SSL_STATE=BB
-export SSL_LOCALITY=BB
-export SSL_ORGANIZATION=fascinatin
-export SSL_ORGUNIT=IT
+DISTRO=centos7
+CFG_HOSTNAME_FQDN=$ISP_HOSTNAME
+CFG_MYSQL_ROOT_PWD=$MYSQL_ROOT_PASS
+CFG_WEBSERVER=apache
+SSL_COUNTRY=SK
+SSL_STATE=BB
+SSL_LOCALITY=BB
+SSL_ORGANIZATION=fascinatin
+SSL_ORGUNIT=IT
 
 #---------------------------------------------------------------------
 # Load needed Modules

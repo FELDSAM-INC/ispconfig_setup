@@ -14,6 +14,7 @@ InstallISPConfig() {
   echo "language=en" >> autoinstall.ini
   echo "install_mode=standard" >> autoinstall.ini
   echo "hostname=$CFG_HOSTNAME_FQDN" >> autoinstall.ini
+  echo "interface_password=$CFG_ISP_PASSWORD" >> autoinstall.ini
   echo "mysql_hostname=localhost" >> autoinstall.ini
   echo "mysql_root_user=root" >> autoinstall.ini
   echo "mysql_root_password=$CFG_MYSQL_ROOT_PWD" >> autoinstall.ini

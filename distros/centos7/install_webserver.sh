@@ -14,9 +14,6 @@ InstallWebServer() {
 	yum -y install curl curl-devel perl-libwww-perl ImageMagick libxml2 libxml2-devel mod_fcgid php-cli > /dev/null 2>&1
 	echo -e "${green}done!${NC}\n"	
 	
-	sed -i '0,/<FilesMatch \\.php$>/ s/<FilesMatch \\.php$>/<Directory \/usr\/share>\n<FilesMatch \\.php$>/' /etc/httpd/conf.d/php.conf
-	sed -i '0,/<\/FilesMatch>/ s/<\/FilesMatch>/<\/FilesMatch>\n<\/Directory>/' /etc/httpd/conf.d/php.conf
-	
 	systemctl start php-fpm.service
     systemctl enable php-fpm.service
     systemctl enable httpd.service

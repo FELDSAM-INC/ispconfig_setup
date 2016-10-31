@@ -80,12 +80,6 @@ echo
 echo "- This is a clean standard clean installation for supported systems";
 echo "- Internet connection is working properly";
 echo
-echo
-if [ -n "$PRETTY_NAME" ]; then
-	echo -e "The detected Linux Distribution is: " $PRETTY_NAME
-else
-	echo -e "The detected Linux Distribution is: " $ID-$VERSION_ID
-fi
 
 CFG_MULTISERVER=no
 

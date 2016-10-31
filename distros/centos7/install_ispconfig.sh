@@ -28,11 +28,11 @@ InstallISPConfig() {
   echo "ispconfig_use_ssl=y" >> autoinstall.ini
   echo
   echo "[ssl_cert]" >> autoinstall.ini
-  echo "ssl_cert_country=IT" >> autoinstall.ini
-  echo "ssl_cert_state=Italy" >> autoinstall.ini
-  echo "ssl_cert_locality=Udine" >> autoinstall.ini
-  echo "ssl_cert_organisation=Servisys di Temporini Matteo" >> autoinstall.ini
-  echo "ssl_cert_organisation_unit=IT department" >> autoinstall.ini
+  echo "ssl_cert_country=$SSL_COUNTRY" >> autoinstall.ini
+  echo "ssl_cert_state=$SSL_STATE" >> autoinstall.ini
+  echo "ssl_cert_locality=$SSL_LOCALITY" >> autoinstall.ini
+  echo "ssl_cert_organisation=$SSL_ORGANIZATION" >> autoinstall.ini
+  echo "ssl_cert_organisation_unit=$SSL_ORGUNIT" >> autoinstall.ini
   echo "ssl_cert_common_name=$CFG_HOSTNAME_FQDN" >> autoinstall.ini
   echo
   echo "[expert]" >> autoinstall.ini
@@ -43,10 +43,10 @@ InstallISPConfig() {
   echo "mysql_master_root_user=root" >> autoinstall.ini
   echo "mysql_master_root_password=ispconfig" >> autoinstall.ini
   echo "mysql_master_database=dbispconfig" >> autoinstall.ini
-  echo "configure_mail=y" >> autoinstall.ini
-  echo "configure_jailkit=$CFG_JKIT" >> autoinstall.ini
+  echo "configure_mail=n" >> autoinstall.ini
+  echo "configure_jailkit=n" >> autoinstall.ini
   echo "configure_ftp=y" >> autoinstall.ini
-  echo "configure_dns=y" >> autoinstall.ini
+  echo "configure_dns=n" >> autoinstall.ini
   echo "configure_apache=y" >> autoinstall.ini
   echo "configure_nginx=n" >> autoinstall.ini
   echo "configure_firewall=y" >> autoinstall.ini

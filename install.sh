@@ -85,7 +85,7 @@ echo
 CFG_MULTISERVER=no
 
 if [ -f /etc/centos-release ]; then
-	InstallSQLServer 
+	#InstallSQLServer 
 	InstallWebServer
 	InstallFTP 
 	InstallISPConfig

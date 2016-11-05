@@ -51,8 +51,6 @@ SSL_ORGUNIT=IT
 # Load needed Modules
 #---------------------------------------------------------------------
 
-source $PWD/distros/$DISTRO/install_mysql.sh
-source $PWD/distros/$DISTRO/install_webserver.sh
 source $PWD/distros/$DISTRO/install_ftp.sh
 source $PWD/distros/$DISTRO/install_ispconfig.sh
 
@@ -84,16 +82,16 @@ echo
 
 CFG_MULTISERVER=no
 
+if [ -d "/usr/local/ispconfig" ]; then
+	echo -e "${green}ISPConfig already installed.${NC}"
+	exit 0
+fi
+
 if [ -f /etc/centos-release ]; then
-	#InstallSQLServer 
-	InstallWebServer
 	InstallFTP 
 	InstallISPConfig
 	echo -e "${green}Well done ISPConfig installed and configured correctly :D ${NC}"
 	echo "Now you can connect to your ISPConfig installation at https://$CFG_HOSTNAME_FQDN:8080 or https://$ETH0_IP:8080"
-	echo "You can visit my GitHub profile at https://github.com/servisys/ispconfig_setup/"
-	echo -e "${red}If you setup Roundcube webmail go to http://$CFG_HOSTNAME_FQDN/roundcubemail/installer and configure db connection${NC}"
-	echo -e "${red}After that disable access to installer in /etc/httpd/conf.d/roundcubemail.conf${NC}"
 else
 	echo "${red}Unsupported linux distribution.${NC}"
 fi

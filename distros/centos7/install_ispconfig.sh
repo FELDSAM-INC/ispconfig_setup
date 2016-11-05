@@ -12,7 +12,7 @@ InstallISPConfig() {
   touch autoinstall.ini
   echo "[install]" > autoinstall.ini
   echo "language=en" >> autoinstall.ini
-  echo "install_mode=standard" >> autoinstall.ini
+  echo "install_mode=expert" >> autoinstall.ini
   echo "hostname=$CFG_HOSTNAME_FQDN" >> autoinstall.ini
   echo "interface_password=$CFG_ISP_PASSWORD" >> autoinstall.ini
   echo "mysql_hostname=localhost" >> autoinstall.ini
